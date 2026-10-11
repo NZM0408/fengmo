@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>封魔 - 目录</title>
+    <style>
+        :root {
+            --bg-color: #F7F5F0;
+            --text-color: #2C2C2C;
+            --title-color: #1A1A1A;
+            --link-color: #4A6B82;
+            --link-hover: #2C4756;
+            --container-bg: #FFFFFF;
+            --border-color: #E6E2D6;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #C0C0C0;
+            --title-color: #E0E0E0;
+            --link-color: #7B9AB0;
+            --link-hover: #A0BCD2;
+            --container-bg: #1E1E1E;
+            --border-color: #2D2D2D;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: "Source Han Serif SC", "Noto Serif SC", "SimSun", "宋体", serif;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .top-bar {
+            max-width: 720px;
+            margin: 20px auto 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: flex-end;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            font-size: 14px;
+        }
+
+        .top-bar button {
+            color: var(--link-color);
+            background: none;
+            border: 1px solid var(--border-color);
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .catalog-container {
+            max-width: 720px;
+            margin: 30px auto 60px auto;
+            background-color: var(--container-bg);
+            padding: 50px 60px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            border: 1px solid var(--border-color);
+        }
+
+        h1.book-title {
+            color: var(--title-color);
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .book-intro {
+            text-align: center;
+            color: #666;
+            font-size: 15px;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        [data-theme="dark"] .book-intro {
+            color: #999;
+        }
+
+        .volume-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--title-color);
+            margin: 30px 0 15px 0;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        .chapter-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .chapter-list li {
+            margin-bottom: 12px;
+        }
+
+        .chapter-list a {
+            display: block;
+            padding: 10px 15px;
+            background-color: var(--bg-color);
+            color: var(--link-color);
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: all 0.2s;
+            border: 1px solid var(--border-color);
+        }
+
+        .chapter-list a:hover {
+            background-color: var(--link-color);
+            color: #FFFFFF;
+            border-color: var(--link-color);
+            transform: translateX(4px);
+        }
+
+        @media (max-width: 768px) {
+            .catalog-container {
+                padding: 25px 20px;
+                margin: 10px auto;
+                border-radius: 0;
+                border-left: none;
+                border-right: none;
+            }
+        }
+    </style>
+</head>
+<body data-theme="light">
+
+    <div class="top-bar">
+        <button onclick="toggleTheme()" id="theme-btn">🌙 夜间模式</button>
+    </div>
+
+    <main class="catalog-container">
+        <h1 class="book-title">《封魔》</h1>
+        <div class="book-intro">
+            两千多年前，天外陨石坠入蓝星，万物化为灵魔兽。人类为求生存觉醒灵赋，成为抗衡魔兽的灵魔师。少年颜程，在觉醒仪式上迎来了未知的惊天异象……
+        </div>
+
+        <div class="volume-title">正文卷</div>
+        <ul class="chapter-list">
+            <li><a href="chapter1.html">第一章：万众独一的天才</a></li>
+            <!-- 后续写了第二章，可以仿照上面加一行：<li><a href="chapter2.html">第二章：章节名</a></li> -->
+        </ul>
+    </main>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const btn = document.getElementById('theme-btn');
+            if (body.getAttribute('data-theme') === 'light') {
+                body.setAttribute('data-theme', 'dark');
+                btn.textContent = '☀️ 白昼模式';
+            } else {
+                body.setAttribute('data-theme', 'light');
+                btn.textContent = '🌙 夜间模式';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>封魔 - 第一章：万众独一的天才</title>
+    <style>
+        :root {
+            --bg-color: #F7F5F0;
+            --text-color: #2C2C2C;
+            --title-color: #1A1A1A;
+            --link-color: #4A6B82;
+            --link-hover: #2C4756;
+            --container-bg: #FFFFFF;
+            --border-color: #E6E2D6;
+            --font-size: 18px; /* 默认正文字号 */
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #C0C0C0;
+            --title-color: #E0E0E0;
+            --link-color: #7B9AB0;
+            --link-hover: #A0BCD2;
+            --container-bg: #1E1E1E;
+            --border-color: #2D2D2D;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: "Source Han Serif SC", "Noto Serif SC", "SimSun", "宋体", serif;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .top-bar {
+            max-width: 720px;
+            margin: 20px auto 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            font-size: 14px;
+        }
+
+        .top-bar-left, .top-bar-right {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .top-bar a, .top-bar button {
+            color: var(--link-color);
+            text-decoration: none;
+            background: none;
+            border: 1px solid var(--border-color);
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .top-bar a:hover, .top-bar button:hover {
+            border-color: var(--link-color);
+            background-color: var(--container-bg);
+        }
+
+        .reader-container {
+            max-width: 720px;
+            margin: 30px auto 60px auto;
+            background-color: var(--container-bg);
+            padding: 50px 60px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            border: 1px solid var(--border-color);
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        h1.chapter-title {
+            color: var(--title-color);
+            font-size: 26px;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .chapter-content {
+            font-size: var(--font-size);            
+            line-height: 1.85;          
+            letter-spacing: 0.5px;
+            transition: font-size 0.2s ease;
+        }
+
+        .chapter-content p {
+            margin-bottom: 1.8em;       
+            text-indent: 2em;           
+            text-align: justify;        
+        }
+
+        .pagination {
+            max-width: 720px;
+            margin: 0 auto 50px auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+
+        .pagination a {
+            display: inline-block;
+            padding: 10px 24px;
+            background-color: var(--container-bg);
+            color: var(--link-color);
+            border: 1px solid var(--border-color);
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 15px;
+            transition: all 0.2s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        .pagination a:hover {
+            background-color: var(--link-color);
+            color: #FFFFFF;
+            border-color: var(--link-color);
+        }
+
+        @media (max-width: 768px) {
+            .reader-container {
+                padding: 25px 20px;
+                margin: 10px auto;
+                border-radius: 0;
+                border-left: none;
+                border-right: none;
+            }
+            .chapter-content {
+                font-size: calc(var(--font-size) - 1px);
+            }
+            .top-bar, .pagination {
+                padding: 0 15px;
+            }
+        }
+    </style>
+</head>
+<body data-theme="light">
+
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <a href="index.html">← 目录</a>
+        </div>
+        <div class="top-bar-right">
+            <button onclick="changeFontSize(-1)" title="缩小字号">A-</button>
+            <button onclick="changeFontSize(1)" title="放大字号">A+</button>
+            <button onclick="toggleTheme()" id="theme-btn">🌙 夜间</button>
+        </div>
+    </div>
+
+    <main class="reader-container">
+        <h1 class="chapter-title">第一章：万众独一的天才</h1>
+        
+        <div class="chapter-content" id="novel-text">
+            <p>两千多年前，一颗来自天外的陨石坠入蓝星。</p>
+            <p>这一天不管是人类，还是动物，又或是植物都逃不过这场浩劫的到来。</p>
+            <p>动植物皆纷纷化为灵魔兽，到处肆虐，所到之处皆为尸体，所以人类为了在这个世界能够生存下去，也拥有一种全新的力量，灵赋觉醒，成为灵魔师，与灵魔兽抗衡，还给世间一个太平。</p>
+            <p>北海市。</p>
+            <p>“颜程！紫宸级灵赋——炼狱！与…劫道！”</p>
+            <p>“卧槽！双系灵赋啊！”</p>
+            <p>“不是吧！整个学院的紫宸级一个手都数的过来，你竟然还觉醒两个？”</p>
+            <p>“这一届竟出现何等的天才。”</p>
+            <p>洺院长下意识摸了摸胡须，目光中透露出喜悦，感慨道。</p>
+            <p>话音刚落…</p>
+            <p>轰！天地骤然变色，上空乌云密布，雷劫轰轰鸣响，大地之下，觉醒台上，火焰热气滚滚袭卷而来。</p>
+            <p>站在觉醒台上的少年——颜程，身形修长，面容俊朗，五官分明，此刻紧闭双眼，死死紧握觉醒石球，没有伸回去的意思。</p>
+            <p>一时间，觉醒台下方的学生喧哗一片。</p>
+            <p>“怎么回事，不是觉醒结束了吗？”</p>
+            <p>“这等异象…难道说…”</p>
+            <p>洺院长眉头紧皱，陷入沉思。</p>
+            <p>下一刻，颜程体内的两种灵赋轰然爆发，炼狱于火，劫道为雷，两股能量在他体内不断地撕碎，不断地吞噬，直到融合归一，幻化出新的灵赋。</p>
+            <p>“不好！立即开启封灵阵，封锁觉醒台！”</p>
+            <p>洺院长猛然起身，先行独自一人前往觉醒台正上方，挡住上空的雷劫。</p>
+            <p>坐在讲台上的四位导师纷纷对视一眼，立即动身前往觉醒台上。</p>
+            <p>四位导师身后同时展开灵能羽翅，身处于觉醒台上的各个角落。</p>
+            <p>顷刻间，他们同时间抬起手掌，磅礴的灵能从体内涌出，一层淡蓝色的封灵阵也从觉醒台上升起，直到完全包裹住，才卸下心中的顾虑。</p>
+            <p>正当处理完这一系列的众师，纷纷回眸望去觉醒台上的那一刻，耀眼的光芒此刻在颜程身上绽放，周围的师生都无不例外下意识闭上双眼，抬起手臂遮挡。</p>
+            <p>伴随着咔嚓声响的出现，觉醒石球也因无法承载这股霸道的能量，其表面渐渐出现了无数裂痕，彻底报废，无法继续使用。</p>
+            <p>等到光芒散去，周遭也恢复清静，众人都齐刷刷向觉醒台上看去，只见颜程昏倒在觉醒台上。</p>
+            <p>其中一位封灵阵的导师，立即动身前往觉醒台上，把颜程带去救治。</p>
+            <p>待他们离开，觉醒师擦了擦额头上的汗水，呐喊道：“最新资料，颜程…颜程，融能级灵赋！未知！”</p>
+            <p>“卧槽！这不是传说中的融能级灵赋吧！”</p>
+            <p>“不愧是天才班，单单末尾的颜程就觉醒出这么妖孽的存在。”</p>
+            <p>“是啊！学习成绩好，还觉醒出的融能级灵赋，不敢想象他未来的成就有多高！”</p>
+            <p>那名导师打量怀里的颜程，默默把颜程这个名字记在心中。</p>
+            <p>三个时辰后，颜程才从昏迷中苏醒，一眼观望四周，其身处于舱中休养。</p>
+            <p>“嗯？我这是在哪里？”</p>
+            <p>“这是…灵魔疗舱？”</p>
+            <p>颜程疑惑地摸了摸眼前的灵魔疗舱，感受周遭的液体，身体内的伤势也逐渐康复过来。</p>
+            <p>“颜程，苏醒了啊！”</p>
+            <p>那名导师打开灵魔疗室，就望见颜程已然苏醒，语气温柔地问道。</p>
+            <p>“唐导师，我这是怎么了？”</p>
+            <p>眼前之人，正是颜程的班主任唐馨月。</p>
+            <p>她身形高挑，约莫五尺半左右，体态丰满，带着成熟女性的韵味，乌黑的长发随着她的步伐轻轻摇曳。</p>
+            <p>五官清秀的她，眉眼柔和，双眸如水，眼底透着淡淡的温柔。</p>
+            <p>嘴角始终带着一抹浅浅笑意，让人不自觉地感到亲近，也可以说是这所学院中女神。</p>
+            <p>他对此聊起自己的伤势，依稀记得自己前阵子还在觉醒台上觉醒灵赋，但往后所发生的事情却是不了了之，没有任何的头绪。</p>
+            <p>“你在觉醒灵赋的时候，发生了灵赋融合的迹象，导致身体承受不住，昏迷了过去。”</p>
+            <p>唐馨月只好把整个事情的经过一一说出，解颜程心里之惑。</p>
+            <p>“哦！原来是这样。”</p>
+            <p>“感谢院长与导师们的救治，不然恐怕自己道消了。”</p>
+            <p>颜程深深鞠了一躬，仪表感谢。</p>
+            <p>唐馨月语气温和道：“嗯。”</p>
+            <p>“话说唐导师我灵赋等级是……”</p>
+            <p>颜程也不忘问到自己的灵赋，这对他来说是至关重要的，将来的成就能攀登到多高，就是灵赋的上线有多高了。</p>
+            <p>唐馨月沉默片刻，看向灵魔疗舱里的颜程，缓缓道出：“融能级灵赋！”</p>
+            <p>颜程喃喃道：“融能级灵赋…传说中的灵赋…”</p>
+            <p>他狠狠拍打自己的脸颊，发现这不是梦，才接受这个事实，心底里也愈发兴奋。</p>
+            <p>灵赋等级划分为——红莲级，橙翰级，黄庭级，绿漪级，蓝海级，紫宸级，这六大灵赋。</p>
+            <p>而颜程的灵赋则是超脱这六大灵赋等级之外的存在，同等级的紫宸级融合，便可幻化出新的灵赋，俗称融能级灵赋。</p>
+            <p>“这个融能级灵赋在这片大陆，属实罕见，所以你算是万众独一的天才。”</p>
+            <p>唐馨月优雅端庄地坐在灵疗舱前与颜程感慨道。</p>
+            <p>颜程咧嘴笑道：“嘿嘿！”</p>
+            <p>“不说了，你多半已经痊愈了，可以回家了。”</p>
+            <p>唐馨月本来还是一脸和蔼，转瞬间神色却骤然严厉，敲了一下灵魔疗舱。</p>
+            <p>“啊？哦哦，好的！”</p>
+            <p>颜程打开灵魔疗舱，当即往灵魔疗室门口离去。</p>
+            <p>“谢谢唐导师。”</p>
+            <p>颜程还是一如既往的再次感谢，鞠躬道。</p>
+            <p>唐馨月看着远去的背影，含笑道：“嗯。”</p>
+            <p>颜程家。</p>
+            <p>“爸妈！我回来了。”</p>
+            <p>“阿程，回来了啊。”</p>
+            <p>“听你唐导师说，你在觉醒时昏迷，还好吗？”</p>
+            <p>听到儿子归来的父母，火急火燎地从沙发上站起身子，向颜程冲去。</p>
+            <p>颜程左侧的男子，年近六十，头发已是发白，少有黑发在身，面容上却带着几道岁月所留下的痕迹，此刻眼眸中多出几分关切，拍打颜程的肩膀，正是颜程的父亲——颜天赐。</p>
+            <p>而颜程右侧的女子，年近五十，一头乌黑长发，面容上也带着些许岁月的细纹，脸颊右侧还有个漆黑的胎记，此刻神色温和地抚摸着颜程手臂，正是颜程的母亲——林福云。</p>
+            <p>“没多大的事，您们看我现在不是好好的吗？”</p>
+            <p>颜程随之手舞足蹈，生龙活虎般，看起来一点事都没有。</p>
+            <p>“你啊你，肚子饿了吧，妈妈弄热就可以吃了。”</p>
+            <p>林福云慈祥地注视着颜程，转身走进厨房弄热食物。</p>
+            <p>颜程宛如小孩子回应道：“好！”</p>
+            <p>他们父子就一同到饭桌上，等待着林福云弄来的热饭。</p>
+            <p>家里不算富裕，各种设施应有尽有，客厅中更是有一座橱柜，其摆满各式各样的古董，从其外表可以看出已有些许年份，极具价值。</p>
+            <p>一会儿后，热饭已好，林福云端上食物上桌。</p>
+            <p>颜程宛如饿瘦的野狼，吃着桌面上的食物。</p>
+            <p>吃饱完后，颜程才把整个事情的经过一一说道，免得让父母担心。</p>
+            <p>“阿程，你说你觉醒融能级灵赋？？？”</p>
+            <p>颜程父母二人虽表现惊讶，但其内心却有些混乱。</p>
+            <p>他们二人本不是灵魔师，离灵魔师这条道路深远，没人任何接触，安安静静度过余生，因儿子的缘故，令他们终究还是踏上灵魔师的道路。</p>
+            <p>“阿程啊，看你样子，已经选好踏入灵魔师这个职业了？”</p>
+            <p>颜天赐郑重地开口询问道，言语间能感受到其声音的哽咽，内心深处还是期望阿程可以不踏上灵魔师最好。</p>
+            <p>“决定好了，我想成为一名灵魔师。”</p>
+            <p>颜程郑重地对二人点了点头，语气极为肯定地说道。</p>
+            <p>“行，既然如此，我们就支持你。”</p>
+            <p>颜天赐拍颜程的肩膀，郑重地语气说道。</p>
+            <p>“这卡收好，这是我们能帮你的了。”</p>
+            <p>林福云从口袋中，早已准备的金钱，以卡的形式，交给颜程。</p>
+            <p>他们深知无法在劝阻，索性放开自由，让孩子踏上灵魔师这个职业。</p>
+            <p>当颜程从母亲手上拿下卡后…</p>
+            <p>“但，你要想我们二人保证，危险区域不要涉及。”</p>
+            <p>林福云还是担心孩子的安危，叮嘱道。</p>
+            <p>“知道了，妈。”</p>
+            <p>颜程稳稳当当地握着手中，收进口袋，立即刷洗桌面上的餐桌，便回到自己的房间。</p>
+            <p>“唉，孩子长大了，以后的路得自己走了。”</p>
+            <p>颜天赐摇了摇头，感叹道。</p>
+            <p>“是啊！”</p>
+            <p>林福云点了点头，看向颜程走回房间的背影，应声回应。</p>
+            <p>颜程房间。</p>
+            <p>颜程躺在床上，眼里透露出的兴奋几乎藏不住，毫无掩饰地凝视着握着手中的卡。</p>
+            <p>这张卡是这个世界存储金币的唯一方式，分为铜币卡，银币卡，金币卡，和更高级别的传说币卡。</p>
+            <p>颜程握着的是银币卡，想来这是父母二人这些年的积蓄，我定要好好回报父母。</p>
+        </div>
+    </main>
+
+    <div class="pagination">
+        <a href="index.html">返回目录</a>
+        <a href="index.html">目录</a>
+        <a href="#">下一章(敬请期待)</a>
+    </div>
+
+    <script>
+        // 1. 初始化加载保存的字号和夜间模式
+        let currentFontSize = parseFloat(localStorage.getItem('novel_font_size')) || 18;
+        document.documentElement.style.setProperty('--font-size', currentFontSize + 'px');
+
+        let savedTheme = localStorage.getItem('novel_theme') || 'light';
+        document.body.setAttribute('data-theme', savedTheme);
+        updateThemeBtnText(savedTheme);
+
+        // 2. 自动保存阅读进度与提醒
+        window.addEventListener('beforeunload', () => {
+            localStorage.setItem('fengmo_last_chapter', 'chapter1.html');
+            localStorage.setItem('fengmo_scroll_pos', window.scrollY);
+        });
+
+        // 3. 字号调节函数
+        function changeFontSize(step) {
+            currentFontSize += step * 2;
+            if (currentFontSize < 14) currentFontSize = 14; // 最小字号限制
+            if (currentFontSize > 26) currentFontSize = 26; // 最大字号限制
+            document.documentElement.style.setProperty('--font-size', currentFontSize + 'px');
+            localStorage.setItem('novel_font_size', currentFontSize);
+        }
+
+        // 4. 夜间模式切换函数
+        function toggleTheme() {
+            const body = document.body;
+            let currentTheme = body.getAttribute('data-theme');
+            let newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('novel_theme', newTheme);
+            updateThemeBtnText(newTheme);
+        }
+
+        function updateThemeBtnText(theme) {
+            const btn = document.getElementById('theme-btn');
+            if (theme === 'dark') {
+                btn.textContent = '☀️ 白昼';
+            } else {
+                btn.textContent = '🌙 夜间';
+            }
+        }
+    </script>
+</body>
+</html>
