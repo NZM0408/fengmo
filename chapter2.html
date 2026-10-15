@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>封魔 - 第二章：首次修炼</title>
+    <style>
+        :root {
+            --bg-color: #F7F5F0;
+            --text-color: #2C2C2C;
+            --title-color: #1A1A1A;
+            --link-color: #4A6B82;
+            --link-hover: #2C4756;
+            --container-bg: #FFFFFF;
+            --border-color: #E6E2D6;
+            --font-size: 18px;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #C0C0C0;
+            --title-color: #E0E0E0;
+            --link-color: #7B9AB0;
+            --link-hover: #A0BCD2;
+            --container-bg: #1E1E1E;
+            --border-color: #2D2D2D;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: "Source Han Serif SC", "Noto Serif SC", "SimSun", "宋体", serif;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .top-bar {
+            max-width: 720px;
+            margin: 20px auto 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            font-size: 14px;
+        }
+
+        .top-bar-left, .top-bar-right {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .top-bar a, .top-bar button {
+            color: var(--link-color);
+            text-decoration: none;
+            background: none;
+            border: 1px solid var(--border-color);
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .top-bar a:hover, .top-bar button:hover {
+            border-color: var(--link-color);
+            background-color: var(--container-bg);
+        }
+
+        .reader-container {
+            max-width: 720px;
+            margin: 30px auto 60px auto;
+            background-color: var(--container-bg);
+            padding: 50px 60px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            border: 1px solid var(--border-color);
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        h1.chapter-title {
+            color: var(--title-color);
+            font-size: 26px;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .chapter-content {
+            font-size: var(--font-size);         
+            line-height: 1.85;           
+            letter-spacing: 0.5px;
+            transition: font-size 0.2s ease;
+        }
+
+        .chapter-content p {
+            margin-bottom: 1.8em;        
+            text-indent: 2em;            
+            text-align: justify;         
+        }
+
+        .pagination {
+            max-width: 720px;
+            margin: 0 auto 50px auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+
+        .pagination a {
+            display: inline-block;
+            padding: 10px 24px;
+            background-color: var(--container-bg);
+            color: var(--link-color);
+            border: 1px solid var(--border-color);
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 15px;
+            transition: all 0.2s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        .pagination a:hover {
+            background-color: var(--link-color);
+            color: #FFFFFF;
+            border-color: var(--link-color);
+        }
+
+        @media (max-width: 768px) {
+            .reader-container {
+                padding: 25px 20px;
+                margin: 10px auto;
+                border-radius: 0;
+                border-left: none;
+                border-right: none;
+            }
+            .chapter-content {
+                font-size: calc(var(--font-size) - 1px);
+            }
+            .top-bar, .pagination {
+                padding: 0 15px;
+            }
+        }
+    </style>
+</head>
+<body data-theme="light">
+
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <a href="index.html">← 目录</a>
+        </div>
+        <div class="top-bar-right">
+            <button onclick="changeFontSize(-1)" title="缩小字号">A-</button>
+            <button onclick="changeFontSize(1)" title="放大字号">A+</button>
+            <button onclick="toggleTheme()" id="theme-btn">🌙 夜间</button>
+        </div>
+    </div>
+
+    <main class="reader-container">
+        <h1 class="chapter-title">第二章：首次修炼</h1>
+        
+        <div class="chapter-content" id="novel-text">
+            <p>翌日，清晨时分，一缕朦胧的阳光洒落在颜程脸上，此刻的他站在圣北学院门前，眼中满是期待。</p>
+            <p>圣北学院，位于颜程家一公里开外的一所灵魔学院，面积不大，但可容纳上万个灵魔师也不是问题。</p>
+            <p>颜程就读于灵魔一班，位于A栋楼的第一层楼，最为角头班，靠近后楼梯的一个班级。</p>
+            <p>时间尚早，班级座位还有空位，颜程寻得一个角落空位落座，望见窗边外的风景。</p>
+            <p>“清晨的风景，果然不一样。”</p>
+            <p>颜程感叹道。</p>
+            <p>不一会儿，学院的铃声随之响起，灵魔师都陆陆续续走进自己的班级，等候着导师的到来。</p>
+            <p>“颜程！你觉得我们是哪位导师教导我们？”</p>
+            <p>落座在颜程左侧的少年，吴竣优，身形娇小，身高甚至不到一米六，拥有一头蓬松而有型的短发，灵动有神的一双明亮的眼睛，很受女生喜欢。</p>
+            <p>或许是那副乖巧的模样，让人忍不住想伸手揉揉他的脑袋，逗逗他，像极了一只温柔的小猫咪被人抚摸，但他本人不太满意被人抚摸的感觉。</p>
+            <p>“唐导师吧。”</p>
+            <p>颜程说出这句话的时候，唐馨月从班级门口外走了进来。</p>
+            <p>他一眼望去，唐馨月导师还是一如既往的美丽，不愧是学院中的女神。</p>
+            <p>她身穿一身制服，外搭合身的外套，搭配黑色丝袜与一双精致的高跟鞋，让其整体穿着时尚而得体，添加了几分温婉，令她在学院中除了因美丽之外颇受灵魔师喜欢的原因，被不少人称为“温月女神”。</p>
+            <p>“大家好！你们想必已经认识我了，但我还是要自我介绍一下，我是唐导师，唐馨月导师。”</p>
+            <p>唐馨月在讲桌前，优雅且简约的介绍自己。</p>
+            <p>“哇！居然是我的温月女神啊！”</p>
+            <p>“什么你的，明明是我的！”</p>
+            <p>“不！是我的！”</p>
+            <p>霎时间，整个灵魔一班议论纷纷。</p>
+            <p>“好了！好了！我们正式上课了！”</p>
+            <p>唐馨月拍了拍桌子，随后开始上课了。</p>
+            <p>“为师今日便探讨灵魔二字。</p>
+            <p>何为灵魔师？何为灵魔兽？何为灵魔源？</p>
+            <p>想必你们已经知晓灵魔师了吧，当你们觉醒灵赋之时，无论灵赋等级高低，都可正式踏入灵魔师这一道路。</p>
+            <p>灵魔兽，则是这世间的邪恶，侵犯大陆，使人间弄得鸡犬不宁，不得安宁，但其实他们还未化为灵魔兽之前，与动植物没什么区别。</p>
+            <p>灵魔源是灵魔师体内的力量核心，俗称容器。</p>
+            <p>容器里分为两种能量，一种是灵能，通过运转功法，吸收天地间的灵能，纳入体内。</p>
+            <p>另一种则是魔能，猎杀灵魔兽，炼化灵魔兽体内的魔能，后引入体内。”</p>
+            <p>两者都是可使境界提升，只是一个是主修精神，滋养灵赋，另一个则是主修肉身，强化体魄。”</p>
+            <p>唐馨月说完灵魔二字，目光望向角落的颜程。</p>
+            <p>作为需要着重培养对象，她肯定要确保颜程能听懂灵魔是什么。</p>
+            <p>当然颜程也注意到唐馨月的注视，点了点头，眼眸中流露出满意，示意自己已经听懂。</p>
+            <p>“好了，说完灵魔二字，现在为师就派发给你们下级——吸收法。</p>
+            <p>吸收法也划分为下中上极，这四个等级，以低到高依次排列。</p>
+            <p>吸收法，可让灵魔师吸收天地间的灵能，纳入自身体内，从而更快进阶。”</p>
+            <p>“有什么不懂的，明日我们在探讨。”</p>
+            <p>唐馨月从纳戒中，掏出三十多本的吸收法，以自身灵能的方式，传达到每个座位。</p>
+            <p>“不知我何时才拥有属于我的纳戒呢？”</p>
+            <p>纳戒好比一个书包，方便携带，容纳空间大，是作为一名灵魔师不可或缺的一样东西。</p>
+            <p>“下课！”</p>
+            <p>当唐馨月走出班级，班级上也终是乱成一团粥，也有些灵魔师纷纷离开了，其中也包括颜程。</p>
+            <p>颜程和他的兄弟吴竣优两人走回家的路上，谈起昨日班上的其他灵魔师的灵赋。</p>
+            <p>“没想到除了我，我们班还出现两位紫宸级灵赋之人。”</p>
+            <p>颜程摸了摸下巴，脑海中不由浮现他们二人的身影。</p>
+            <p>一个是拥有灵赋冰魔之人的梦秋雪，这所学院数一数二的校花之一，另一个则是颜程的死对头，拥有灵赋幽暗之人的沈青阳。</p>
+            <p>班级上其余人大多数都是蓝海级灵赋之人，只有特别之人是绿漪级灵赋。</p>
+            <p>“你应该是蓝海级灵赋吧。”</p>
+            <p>颜程低下头，看向走在一旁的吴竣优。</p>
+            <p>“那当然啊！”</p>
+            <p>吴竣优小跑到颜程前方，仰望天空，抬头挺胸，指尖朝向远方。</p>
+            <p>说完此话，吴竣优转过身，抬头望去颜程，吞吞吐吐地说出：“颜程，我可以抱紧你的大腿吗？”</p>
+            <p>吴竣优坦诚地看着颜程说道，眼眸流露出渴望，自己身边的兄弟是融能级天赋，是个人都想要攀登这棵树，哪怕最后颜程拒绝，他也无话可说，毕竟他自己都忙不过来升级，还指望他帮助其他人。</p>
+            <p>“都行。”</p>
+            <p>颜程摊开双手，眼神中满是无奈的表示。</p>
+            <p>“感谢大爹！那我就笑纳了！”</p>
+            <p>“我先回去了。”</p>
+            <p>眼看到家门口了，吴竣优这一套说辞，将旁边愣住的颜程给逗笑了。</p>
+            <p>“这小子。”</p>
+            <p>颜程点了点头，望着吴竣优的背影离去。</p>
+            <p>兄弟确实要互相帮助，况且吴竣优还是他从小到大的兄弟，这时候抛弃他有点说不过去，而且他本人不是这样的人。</p>
+            <p>颜程加快脚步，赶往家中走去，想要立即探讨吸收法的奥妙，毕竟没有吸收法就无法吸收天地间的灵能，进而晋升。</p>
+            <p>颜程吃饱冲凉，回到自己房间，从背包里拿出唐馨月在班上所给予的吸收法，观望其中的奥义所在。</p>
+            <p>颜程触摸吸收法的那一刻，脑海里不断出现无数人影，教导他如何使用吸收法。</p>
+            <p>一个时辰后，颜程从中感悟不少，深知其中的奥义所在，所谓吸收法，从天地间的灵能纳入体内，运转功法，化灵为修，进而巩固体内灵魔源。</p>
+            <p>“归灵法有点意思，只可惜等级低了些，看日后能否寻得更高等级的吸收法。”</p>
+            <p>颜程叹了叹，坦诚道破这一切。</p>
+            <p>随之，他盘坐其中，不断地感知天地灵能，运转归灵法，双手放在膝盖上，开始了第一次修炼。</p>
+            <p>周边的灵能不断地涌入颜程体内，汇聚而成他的一股进阶的能量，进入到灵魔源。</p>
+            <p>一股融能级灵赋产生反应，劫焱！</p>
+            <p>焚炎升腾而起，一道道劫雷奔涌闪烁，雷火彼此交织，迸发出一股令人心悸的毁灭气息。</p>
+            <p>“这就是我的劫焱？”</p>
+            <p>颜程能感受到其极致的破坏力，拥有着焚烧一切的能量。</p>
+            <p>“不管这些，先继续修炼突破。”</p>
+            <p>颜程显然意识到，如今境界才是最为关键的一点，只要他踏入灵魔士，他就能彻底掌握劫焱。</p>
+            <p>灵能不断地涌入他的体内，直到灵能汇聚到一个凝结点，枷锁有点松动，疑似突破的征兆。</p>
+            <p>轰！</p>
+            <p>颜程体内的桎梏终是被冲破，一股前所未有的力量自体内涌出，达到1级灵魔士境界！</p>
+            <p>“这就踏入1级灵魔士了？”</p>
+            <p>颜程看了看墙上的时钟，回想起当时所花费的时间，竟是过了一个时辰！</p>
+            <p>“没想到竟如此之快，难道是融能级的关系？”</p>
+            <p>颜程感叹自身的天赋，终于在此刻不再是一名普通人，而是真正的灵魔师。</p>
+            <p>“但怎么感觉距离2级灵魔士有点远啊？”</p>
+            <p>颜程一头雾水，脑海里不断地思索着这个问题，但终究还是没有寻得一个适合的答案，放弃了。</p>
+            <p>“等明天找个时间问看唐导师吧！”</p>
+            <p>这时候，最好的办法，就是明日当面询问唐馨月导师了，才能寻到答案。</p>
+        </div>
+    </main>
+
+    <div class="pagination">
+        <a href="chapter1.html">上一章</a>
+        <a href="index.html">目录</a>
+        <a href="#">下一章(敬请期待)</a>
+    </div>
+
+    <script>
+        let currentFontSize = parseFloat(localStorage.getItem('novel_font_size')) || 18;
+        document.documentElement.style.setProperty('--font-size', currentFontSize + 'px');
+
+        let savedTheme = localStorage.getItem('novel_theme') || 'light';
+        document.body.setAttribute('data-theme', savedTheme);
+        updateThemeBtnText(savedTheme);
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const textElement = document.getElementById('novel-text');
+            if (textElement) {
+                const textLength = textElement.innerText.replace(/\s+/g, '').length;
+                localStorage.setItem('chapter2_word_count', textLength);
+            }
+        });
+
+        window.addEventListener('beforeunload', () => {
+            localStorage.setItem('fengmo_last_chapter', 'chapter2.html');
+            localStorage.setItem('fengmo_scroll_pos', window.scrollY);
+        });
+
+        function changeFontSize(step) {
+            currentFontSize += step * 2;
+            if (currentFontSize < 14) currentFontSize = 14; 
+            if (currentFontSize > 26) currentFontSize = 26; 
+            document.documentElement.style.setProperty('--font-size', currentFontSize + 'px');
+            localStorage.setItem('novel_font_size', currentFontSize);
+        }
+
+        function toggleTheme() {
+            const body = document.body;
+            let currentTheme = body.getAttribute('data-theme');
+            let newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('novel_theme', newTheme);
+            updateThemeBtnText(newTheme);
+        }
+
+        function updateThemeBtnText(theme) {
+            const btn = document.getElementById('theme-btn');
+            if (theme === 'dark') {
+                btn.textContent = '☀️ 白昼';
+            } else {
+                btn.textContent = '🌙 夜间';
+            }
+        }
+    </script>
+</body>
+</html>

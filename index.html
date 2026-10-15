@@ -39,7 +39,8 @@
             margin: 20px auto 0 auto;
             padding: 0 20px;
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
+            align-items: center;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
             font-size: 14px;
         }
@@ -104,7 +105,9 @@
         }
 
         .chapter-list a {
-            display: block;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             padding: 10px 15px;
             background-color: var(--bg-color);
             color: var(--link-color);
@@ -122,6 +125,18 @@
             transform: translateX(4px);
         }
 
+        .chapter-list a:hover .word-count {
+            color: #FFFFFF;
+            opacity: 0.8;
+        }
+
+        .word-count {
+            font-size: 13px;
+            opacity: 0.6;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            transition: color 0.2s;
+        }
+
         @media (max-width: 768px) {
             .catalog-container {
                 padding: 25px 20px;
@@ -136,6 +151,7 @@
 <body data-theme="light">
 
     <div class="top-bar">
+        <a href="#" id="continue-read-btn" style="color: var(--link-color); text-decoration: none; border: 1px solid var(--border-color); padding: 6px 12px; border-radius: 4px; font-size: 14px; display: none;">📖 继续阅读</a>
         <button onclick="toggleTheme()" id="theme-btn">🌙 夜间模式</button>
     </div>
 
@@ -147,20 +163,68 @@
 
         <div class="volume-title">正文卷</div>
         <ul class="chapter-list">
-            <li><a href="chapter1.html">第一章：万众独一的天才</a></li>
-            <!-- 后续写了第二章，可以仿照上面加一行：<li><a href="chapter2.html">第二章：章节名</a></li> -->
+            <li>
+                <a href="chapter1.html">
+                    <span>第一章：万众独一的天才</span>
+                    <span id="c1-count" class="word-count"></span>
+                </a>
+            </li>
+            <li>
+                <a href="chapter2.html">
+                    <span>第二章：首次修炼</span>
+                    <span id="c2-count" class="word-count"></span>
+                </a>
+            </li>
         </ul>
     </main>
 
     <script>
+        // 初始化夜间模式
+        let savedTheme = localStorage.getItem('novel_theme') || 'light';
+        document.body.setAttribute('data-theme', savedTheme);
+        updateThemeBtnText(savedTheme);
+
+        // 页面加载时读取各章字数与阅读进度
+        window.addEventListener('DOMContentLoaded', () => {
+            const c1Count = localStorage.getItem('chapter1_word_count');
+            if (c1Count) {
+                document.getElementById('c1-count').textContent = `约 ${c1Count} 字`;
+            }
+
+            const c2Count = localStorage.getItem('chapter2_word_count');
+            if (c2Count) {
+                document.getElementById('c2-count').textContent = `约 ${c2Count} 字`;
+            }
+
+            // 检查历史阅读记录，显示继续阅读按钮
+            const lastChapter = localStorage.getItem('fengmo_last_chapter');
+            const continueBtn = document.getElementById('continue-read-btn');
+            if (lastChapter && continueBtn) {
+                continueBtn.href = lastChapter;
+                continueBtn.style.display = 'inline-block';
+                if (lastChapter === 'chapter1.html') {
+                    continueBtn.textContent = '📖 继续阅读：第一章';
+                } else if (lastChapter === 'chapter2.html') {
+                    continueBtn.textContent = '📖 继续阅读：第二章';
+                }
+            }
+        });
+
         function toggleTheme() {
             const body = document.body;
+            let currentTheme = body.getAttribute('data-theme');
+            let newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('novel_theme', newTheme);
+            updateThemeBtnText(newTheme);
+        }
+
+        function updateThemeBtnText(theme) {
             const btn = document.getElementById('theme-btn');
-            if (body.getAttribute('data-theme') === 'light') {
-                body.setAttribute('data-theme', 'dark');
+            if (theme === 'dark') {
                 btn.textContent = '☀️ 白昼模式';
             } else {
-                body.setAttribute('data-theme', 'light');
                 btn.textContent = '🌙 夜间模式';
             }
         }

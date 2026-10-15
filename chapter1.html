@@ -13,7 +13,7 @@
             --link-hover: #2C4756;
             --container-bg: #FFFFFF;
             --border-color: #E6E2D6;
-            --font-size: 18px; /* 默认正文字号 */
+            --font-size: 18px;
         }
 
         [data-theme="dark"] {
@@ -89,16 +89,16 @@
         }
 
         .chapter-content {
-            font-size: var(--font-size);            
-            line-height: 1.85;          
+            font-size: var(--font-size);         
+            line-height: 1.85;           
             letter-spacing: 0.5px;
             transition: font-size 0.2s ease;
         }
 
         .chapter-content p {
-            margin-bottom: 1.8em;       
-            text-indent: 2em;           
-            text-align: justify;        
+            margin-bottom: 1.8em;        
+            text-indent: 2em;            
+            text-align: justify;         
         }
 
         .pagination {
@@ -180,7 +180,7 @@
             <p>“这等异象…难道说…”</p>
             <p>洺院长眉头紧皱，陷入沉思。</p>
             <p>下一刻，颜程体内的两种灵赋轰然爆发，炼狱于火，劫道为雷，两股能量在他体内不断地撕碎，不断地吞噬，直到融合归一，幻化出新的灵赋。</p>
-            <p>“不好！立即开启封灵阵，封锁觉醒台！”</p>
+            <p>“不好！立即开启封灵阵，封锁觉醒台!”</p>
             <p>洺院长猛然起身，先行独自一人前往觉醒台正上方，挡住上空的雷劫。</p>
             <p>坐在讲台上的四位导师纷纷对视一眼，立即动身前往觉醒台上。</p>
             <p>四位导师身后同时展开灵能羽翅，身处于觉醒台上的各个角落。</p>
@@ -271,17 +271,16 @@
             <p>颜程躺在床上，眼里透露出的兴奋几乎藏不住，毫无掩饰地凝视着握着手中的卡。</p>
             <p>这张卡是这个世界存储金币的唯一方式，分为铜币卡，银币卡，金币卡，和更高级别的传说币卡。</p>
             <p>颜程握着的是银币卡，想来这是父母二人这些年的积蓄，我定要好好回报父母。</p>
+            <p></p>
         </div>
     </main>
 
     <div class="pagination">
-        <a href="index.html">返回目录</a>
         <a href="index.html">目录</a>
-        <a href="#">下一章(敬请期待)</a>
+        <a href="chapter2.html">下一章</a>
     </div>
 
     <script>
-        // 1. 初始化加载保存的字号和夜间模式
         let currentFontSize = parseFloat(localStorage.getItem('novel_font_size')) || 18;
         document.documentElement.style.setProperty('--font-size', currentFontSize + 'px');
 
@@ -289,22 +288,27 @@
         document.body.setAttribute('data-theme', savedTheme);
         updateThemeBtnText(savedTheme);
 
-        // 2. 自动保存阅读进度与提醒
+        window.addEventListener('DOMContentLoaded', () => {
+            const textElement = document.getElementById('novel-text');
+            if (textElement) {
+                const textLength = textElement.innerText.replace(/\s+/g, '').length;
+                localStorage.setItem('chapter1_word_count', textLength);
+            }
+        });
+
         window.addEventListener('beforeunload', () => {
             localStorage.setItem('fengmo_last_chapter', 'chapter1.html');
             localStorage.setItem('fengmo_scroll_pos', window.scrollY);
         });
 
-        // 3. 字号调节函数
         function changeFontSize(step) {
             currentFontSize += step * 2;
-            if (currentFontSize < 14) currentFontSize = 14; // 最小字号限制
-            if (currentFontSize > 26) currentFontSize = 26; // 最大字号限制
+            if (currentFontSize < 14) currentFontSize = 14; 
+            if (currentFontSize > 26) currentFontSize = 26; 
             document.documentElement.style.setProperty('--font-size', currentFontSize + 'px');
             localStorage.setItem('novel_font_size', currentFontSize);
         }
 
-        // 4. 夜间模式切换函数
         function toggleTheme() {
             const body = document.body;
             let currentTheme = body.getAttribute('data-theme');
