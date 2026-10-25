@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>封魔 - 第三章：灵能测试</title>
+    <style>
+        :root {
+            --bg-color: #F7F5F0;
+            --text-color: #2C2C2C;
+            --title-color: #1A1A1A;
+            --link-color: #4A6B82;
+            --link-hover: #2C4756;
+            --container-bg: #FFFFFF;
+            --border-color: #E6E2D6;
+            --font-size: 18px;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #C0C0C0;
+            --title-color: #E0E0E0;
+            --link-color: #7B9AB0;
+            --link-hover: #A0BCD2;
+            --container-bg: #1E1E1E;
+            --border-color: #2D2D2D;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: "Source Han Serif SC", "Noto Serif SC", "SimSun", "宋体", serif;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .top-bar {
+            max-width: 720px;
+            margin: 20px auto 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            font-size: 14px;
+        }
+
+        .top-bar-left, .top-bar-right {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .top-bar a, .top-bar button {
+            color: var(--link-color);
+            text-decoration: none;
+            background: none;
+            border: 1px solid var(--border-color);
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .top-bar a:hover, .top-bar button:hover {
+            border-color: var(--link-color);
+            background-color: var(--container-bg);
+        }
+
+        .reader-container {
+            max-width: 720px;
+            margin: 30px auto 60px auto;
+            background-color: var(--container-bg);
+            padding: 50px 60px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            border: 1px solid var(--border-color);
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        h1.chapter-title {
+            color: var(--title-color);
+            font-size: 26px;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .chapter-content {
+            font-size: var(--font-size);         
+            line-height: 1.85;           
+            letter-spacing: 0.5px;
+            transition: font-size 0.2s ease;
+        }
+
+        .chapter-content p {
+            margin-bottom: 1.8em;        
+            text-indent: 2em;            
+            text-align: justify;         
+        }
+
+        .pagination {
+            max-width: 720px;
+            margin: 0 auto 50px auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+
+        .pagination a {
+            display: inline-block;
+            padding: 10px 24px;
+            background-color: var(--container-bg);
+            color: var(--link-color);
+            border: 1px solid var(--border-color);
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 15px;
+            transition: all 0.2s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        .pagination a:hover {
+            background-color: var(--link-color);
+            color: #FFFFFF;
+            border-color: var(--link-color);
+        }
+
+        @media (max-width: 768px) {
+            .reader-container {
+                padding: 25px 20px;
+                margin: 10px auto;
+                border-radius: 0;
+                border-left: none;
+                border-right: none;
+            }
+            .chapter-content {
+                font-size: calc(var(--font-size) - 1px);
+            }
+            .top-bar, .pagination {
+                padding: 0 15px;
+            }
+        }
+    </style>
+</head>
+<body data-theme="light">
+
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <a href="index.html">← 目录</a>
+        </div>
+        <div class="top-bar-right">
+            <button onclick="changeFontSize(-1)" title="缩小字号">A-</button>
+            <button onclick="changeFontSize(1)" title="放大字号">A+</button>
+            <button onclick="toggleTheme()" id="theme-btn">🌙 夜间</button>
+        </div>
+    </div>
+
+    <main class="reader-container">
+        <h1 class="chapter-title">第三章：灵能测试</h1>
+        
+        <div class="chapter-content" id="novel-text">
+            <p>“你是说你晋级1级灵魔士后，距离2级灵魔士有点远？”</p>
+            <p>唐馨月摸了摸脑袋，脑海里不断地思考这其中的缘由，但始终还是找不到答案。</p>
+            <p>她有点怀疑颜程，觉醒了融能级灵赋，自认为是个天赋异禀之人，从而心生懈怠，导致修为迟迟没有进展。</p>
+            <p>这些年来，颜程或许会懒，但依旧会努力奋斗，不会拿自己前途开玩笑。</p>
+            <p>想来，颜程的话，多半是真话，但终究还是要去检测一番，验证真假。</p>
+            <p>“行，我带你去灵能舱。”</p>
+            <p>唐馨月下定决心，语气沉稳，起身朝办公室外走去。</p>
+            <p>“但如若有假…你知道后果的吧。”</p>
+            <p>唐馨月回头望向颜程，原本语气中还带着温柔，现在多了几分严厉。</p>
+            <p>颜程深知这个后果有多可怕，当初的他就欺瞒过唐馨月一次，逃课上网吧打游戏，认为学业对他而言，毫无意义，虽身处顶尖班，但在班上也是末尾的存在，因此没有读书的欲望。</p>
+            <p>而换来了唐馨月的责罚，鞭打，甚至是留堂做试卷，种种事情，他肯定是不想要再次经历了，往后认真努力，但依旧是没上到什么名次，但好在分数有涨，不枉唐馨月的栽培，算的上是颜程恩师。</p>
+            <p>分数的高低，代表着那些没有觉醒灵赋之人，在平民社会上依然还有一席之地，只要肯好好读书，出人头地不是问题，只是方向不在于灵魔师。</p>
+            <p>随后，两人一前一后地朝灵能舱走去，验证此事的真假。</p>
+            <p>不久，两人抵达灵能舱，唐馨月从口袋中掏出身份明牌，随后将身份明牌贴在灵魔验真处。</p>
+            <p>“滴！认证通过！”</p>
+            <p>随后，一道播报声从这灵魔验真处响起。</p>
+            <p>下一刻，灵能舱的房门忽然打开，只见里头齐刷刷的灵能舱在左右两侧放置，等待着有缘人使用。</p>
+            <p>“好智能啊！”</p>
+            <p>颜程看到这一幕，眼中满是震惊，不禁赞叹道。</p>
+            <p>唐馨月没有理会颜程此番言语，带着他前往最末端的一个灵能舱走去，一番密码输出后，房门打开。</p>
+            <p>只见，这台灵能舱与前面颜程所见的有所不同，整体外观更精致，更高能，更美观，犹如全新般未使用过。</p>
+            <p>由上万个顶级金属打造而成，其开销成本甚至破亿都不为过，甚至更高，可以想象眼前这台灵能舱，全学院加起来也不超过三个。</p>
+            <p>“好美啊！”</p>
+            <p>颜程看见的那一刻，眼中闪过一抹震惊，目光始终未挪开半步，死死凝视着前方的灵能舱。</p>
+            <p>“这是专属于融能级灵赋之人的检测。”</p>
+            <p>唐馨月摸了摸这封印已久的灵能舱，脑海里回想起百年前的故事。</p>
+            <p>这所学院刚起步不久，就贸然间出现一个融能级灵赋之人，当时可谓是震惊全学院，只可惜在试炼中，遭受到旁人的袭击，早早陨落，可以想象如果不出意外，加以时日，必将登临灵魔师这条道路的顶端。</p>
+            <p>唐馨月侧过脸，望向一旁的颜程，心中不知不觉中冒出一个想法，但片刻后，终究还是打消这个念头，现在的他只需安稳发育，未来灵魔师的顶端战力，必有他的一席之地。</p>
+            <p>“唐导师可以开始了吗？”</p>
+            <p>“我有点迫不及待了！”</p>
+            <p>唐馨月回过神来，颜程已然在灵能舱准备就绪，等待着她的下一步指示。</p>
+            <p>唐馨月默默点头，转身望向一旁六寸屏幕，颜程的数据一行行展示出来，直到灵能那一行浮现，就连她测试那么多年，也未曾在觉醒时期见到过。</p>
+            <p>“灵魔源泉！”</p>
+            <p>唐馨月双眼一怔，时不时还望向灵魔舱里的颜程，心中不由得感叹，甚是有些羡慕颜程的天赋，前有融能级灵赋，后有灵魔源泉在身，可谓是古今第一人啊！</p>
+            <p>“但…1级灵魔士，怎么可能出现灵魔源能？”</p>
+            <p>唐馨月在心中摸索，思考其中的缘由。</p>
+            <p>片刻后，她只能下定论在融能级灵赋上，使灵魔源提前发生异变。</p>
+            <p>融能级灵赋迄今为止还未完全探索，这等层次的灵赋，大陆上的灵魔士手指头都数得过来。</p>
+            <p>“没想到，刚步入灵魔师一天的你，体内还隐藏着更为逆天的天赋。”</p>
+            <p>唐馨月看着屏幕上的数据，保存起来，放进学院档口里。</p>
+            <p>颜程从灵能舱走出，卸下心中的顾虑，脸上不由露出喜色，嘴角微微上扬。</p>
+            <p>“唐导师，什么是灵魔源泉？”</p>
+            <p>颜程一边看向屏幕上的数据，一边望向唐馨月，只求寻得一个答案。</p>
+            <p>“灵魔源泉是灵魔源演变而来，所能容下的灵魔能极为庞大，不是一般初阶段的灵魔源可以比拟的，只有在灵魔师突破五十级的时候，方得演化而出。</p>
+            <p>它的存在，解决了灵魔师在战斗中不再依赖外界的补充，自涌不息，但其代价是现在的灵魔源泉能容量还小，不足以支撑颜程长时间战斗。”</p>
+            <p>“这…我称之为天才也不为过吧。”</p>
+            <p>颜程抬手摸了摸嘴唇，低头看向自己的双脚。</p>
+            <p>“称之为妖孽都不为过。”</p>
+            <p>“唉！”</p>
+            <p>唐馨月摇了摇头，唉声叹气道。</p>
+            <p>当初的她也是紫宸级灵赋之人，但与身旁的颜程相比，这种天赋就显得有点渺小。</p>
+            <p>唐馨月从口袋中掏出一张徽章，附有金色花纹，刻字二字的圣北徽章。</p>
+            <p>“这是？”</p>
+            <p>颜程一脸疑惑地看着握在手掌中的徽章。</p>
+            <p>“这是圣北学院最高级别令，往后你的修炼资源，伙食等，都由学院操办，无需自费。”</p>
+            <p>此刻，颜程才茫然大悟，心中涌起一阵感激。</p>
+            <p>“感谢，唐导师，感谢圣北学院的栽培。”</p>
+            <p>颜程深深鞠了一躬，以示感谢。</p>
+            <p>“嗯。”</p>
+            <p>唐馨月微微点头，颇为满意地看着眼前之人。</p>
+            <p>“但如果你为非作歹，学院必然会将之回收，严惩你的作为。”</p>
+            <p>唐馨月将拿到圣北徽章的好坏处，一并说出，让颜程要有自知之明，别胡来。</p>
+            <p>“知道了，唐导师！”</p>
+            <p>随后颜程转身离开灵能舱，前往食堂，毕竟他从早到现在还没就餐，饿着肚子，可没力气去试炼。</p>
+            <p>圣北学院，食堂。</p>
+            <p>“不是，现在是午休时间？怎么那么多人啊！”</p>
+            <p>颜程抓紧时间，赶忙吃了些东西，趁早到灵魔试炼场试炼。</p>
+            <p>半时辰后，颜程从食堂走出，而身旁更是跟随了一人，等待已久的吴竣优。</p>
+            <p>“走！我们去灵魔试炼场试炼。”</p>
+            <p>颜程朝灵魔试炼场的方向指去，眼中满是炽热，心中对试炼充满了渴望。</p>
+        </div>
+    </main>
+
+    <div class="pagination">
+        <a href="chapter2.html">上一章</a>
+        <a href="index.html">目录</a>
+        <a href="#">下一章</a>
+    </div>
+
+    <script>
+        // 1. 初始化字号与主题
+        let currentFontSize = parseFloat(localStorage.getItem('novel_font_size')) || 18;
+        document.documentElement.style.setProperty('--font-size', currentFontSize + 'px');
+
+        let savedTheme = localStorage.getItem('novel_theme') || 'light';
+        document.body.setAttribute('data-theme', savedTheme);
+        updateThemeBtnText(savedTheme);
+
+        // 2. 自动统计字数并存入 localStorage（供目录页读取）
+        window.addEventListener('DOMContentLoaded', () => {
+            const textElement = document.getElementById('novel-text');
+            if (textElement) {
+                const textLength = textElement.innerText.replace(/\s+/g, '').length;
+                localStorage.setItem('chapter3_word_count', textLength);
+            }
+        });
+
+        // 3. 记录阅读进度
+        window.addEventListener('beforeunload', () => {
+            localStorage.setItem('fengmo_last_chapter', 'chapter3.html');
+            localStorage.setItem('fengmo_scroll_pos', window.scrollY);
+        });
+
+        // 4. 字号调节
+        function changeFontSize(step) {
+            currentFontSize += step * 2;
+            if (currentFontSize < 14) currentFontSize = 14; 
+            if (currentFontSize > 26) currentFontSize = 26; 
+            document.documentElement.style.setProperty('--font-size', currentFontSize + 'px');
+            localStorage.setItem('novel_font_size', currentFontSize);
+        }
+
+        // 5. 主题切换
+        function toggleTheme() {
+            const body = document.body;
+            let currentTheme = body.getAttribute('data-theme');
+            let newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('novel_theme', newTheme);
+            updateThemeBtnText(newTheme);
+        }
+
+        function updateThemeBtnText(theme) {
+            const btn = document.getElementById('theme-btn');
+            if (theme === 'dark') {
+                btn.textContent = '☀️ 白昼';
+            } else {
+                btn.textContent = '🌙 夜间';
+            }
+        }
+    </script>
+</body>
+</html>

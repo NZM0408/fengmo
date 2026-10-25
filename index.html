@@ -175,6 +175,12 @@
                     <span id="c2-count" class="word-count"></span>
                 </a>
             </li>
+            <li>
+                <a href="chapter3.html">
+                    <span>第三章：灵能测试</span>
+                    <span id="c3-count" class="word-count"></span>
+                </a>
+            </li>
         </ul>
     </main>
 
@@ -196,6 +202,11 @@
                 document.getElementById('c2-count').textContent = `约 ${c2Count} 字`;
             }
 
+            const c3Count = localStorage.getItem('chapter3_word_count');
+            if (c3Count) {
+                document.getElementById('c3-count').textContent = `约 ${c3Count} 字`;
+            }
+
             // 检查历史阅读记录，显示继续阅读按钮
             const lastChapter = localStorage.getItem('fengmo_last_chapter');
             const continueBtn = document.getElementById('continue-read-btn');
@@ -206,6 +217,8 @@
                     continueBtn.textContent = '📖 继续阅读：第一章';
                 } else if (lastChapter === 'chapter2.html') {
                     continueBtn.textContent = '📖 继续阅读：第二章';
+                } else if (lastChapter === 'chapter3.html') {
+                    continueBtn.textContent = '📖 继续阅读：第三章';
                 }
             }
         });
