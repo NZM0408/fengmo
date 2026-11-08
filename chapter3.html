@@ -239,11 +239,10 @@
     <div class="pagination">
         <a href="chapter2.html">上一章</a>
         <a href="index.html">目录</a>
-        <a href="#">下一章</a>
+        <a href="chapter4.html">下一章</a>
     </div>
 
     <script>
-        // 1. 初始化字号与主题
         let currentFontSize = parseFloat(localStorage.getItem('novel_font_size')) || 18;
         document.documentElement.style.setProperty('--font-size', currentFontSize + 'px');
 
@@ -251,7 +250,6 @@
         document.body.setAttribute('data-theme', savedTheme);
         updateThemeBtnText(savedTheme);
 
-        // 2. 自动统计字数并存入 localStorage（供目录页读取）
         window.addEventListener('DOMContentLoaded', () => {
             const textElement = document.getElementById('novel-text');
             if (textElement) {
@@ -260,13 +258,11 @@
             }
         });
 
-        // 3. 记录阅读进度
         window.addEventListener('beforeunload', () => {
             localStorage.setItem('fengmo_last_chapter', 'chapter3.html');
             localStorage.setItem('fengmo_scroll_pos', window.scrollY);
         });
 
-        // 4. 字号调节
         function changeFontSize(step) {
             currentFontSize += step * 2;
             if (currentFontSize < 14) currentFontSize = 14; 
@@ -275,7 +271,6 @@
             localStorage.setItem('novel_font_size', currentFontSize);
         }
 
-        // 5. 主题切换
         function toggleTheme() {
             const body = document.body;
             let currentTheme = body.getAttribute('data-theme');

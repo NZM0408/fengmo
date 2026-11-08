@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>封魔 - 第四章：试炼场</title>
+    <style>
+        :root {
+            --bg-color: #F7F5F0;
+            --text-color: #2C2C2C;
+            --title-color: #1A1A1A;
+            --link-color: #4A6B82;
+            --link-hover: #2C4756;
+            --container-bg: #FFFFFF;
+            --border-color: #E6E2D6;
+            --font-size: 18px;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #C0C0C0;
+            --title-color: #E0E0E0;
+            --link-color: #7B9AB0;
+            --link-hover: #A0BCD2;
+            --container-bg: #1E1E1E;
+            --border-color: #2D2D2D;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: "Source Han Serif SC", "Noto Serif SC", "SimSun", "宋体", serif;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .top-bar {
+            max-width: 720px;
+            margin: 20px auto 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            font-size: 14px;
+        }
+
+        .top-bar-left, .top-bar-right {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .top-bar a, .top-bar button {
+            color: var(--link-color);
+            text-decoration: none;
+            background: none;
+            border: 1px solid var(--border-color);
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .top-bar a:hover, .top-bar button:hover {
+            border-color: var(--link-color);
+            background-color: var(--container-bg);
+        }
+
+        .reader-container {
+            max-width: 720px;
+            margin: 30px auto 60px auto;
+            background-color: var(--container-bg);
+            padding: 50px 60px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            border: 1px solid var(--border-color);
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        h1.chapter-title {
+            color: var(--title-color);
+            font-size: 26px;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .chapter-content {
+            font-size: var(--font-size);         
+            line-height: 1.85;           
+            letter-spacing: 0.5px;
+            transition: font-size 0.2s ease;
+        }
+
+        .chapter-content p {
+            margin-bottom: 1.8em;        
+            text-indent: 2em;            
+            text-align: justify;         
+        }
+
+        .pagination {
+            max-width: 720px;
+            margin: 0 auto 50px auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+
+        .pagination a {
+            display: inline-block;
+            padding: 10px 24px;
+            background-color: var(--container-bg);
+            color: var(--link-color);
+            border: 1px solid var(--border-color);
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 15px;
+            transition: all 0.2s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        .pagination a:hover {
+            background-color: var(--link-color);
+            color: #FFFFFF;
+            border-color: var(--link-color);
+        }
+
+        @media (max-width: 768px) {
+            .reader-container {
+                padding: 25px 20px;
+                margin: 10px auto;
+                border-radius: 0;
+                border-left: none;
+                border-right: none;
+            }
+            .chapter-content {
+                font-size: calc(var(--font-size) - 1px);
+            }
+            .top-bar, .pagination {
+                padding: 0 15px;
+            }
+        }
+    </style>
+</head>
+<body data-theme="light">
+
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <a href="index.html">← 目录</a>
+        </div>
+        <div class="top-bar-right">
+            <button onclick="changeFontSize(-1)" title="缩小字号">A-</button>
+            <button onclick="changeFontSize(1)" title="放大字号">A+</button>
+            <button onclick="toggleTheme()" id="theme-btn">🌙 夜间</button>
+        </div>
+    </div>
+
+    <main class="reader-container">
+        <h1 class="chapter-title">第四章：试炼场</h1>
+        
+        <div class="chapter-content" id="novel-text">
+            <p>试炼场，位于圣北学院的北边，宛如一座宝塔般矗立于此，周围萦绕着浓郁的冰属性能量，是一处极有利于冰属性灵魔师修炼的场所。</p>
+            <p>这时，颜程脑海里映照出一道人影——梦秋雪。</p>
+            <p>片刻后，他的思绪被周遭的声音打断。</p>
+            <p>颜程环顾四周，只见不少同年级学员陆陆续续地进出，不仅有与他同年级的灵魔师，甚至是高他好几届的学长学姐。</p>
+            <p>“没想到试炼场居然聚集那么多人啊？”</p>
+            <p>“足够给大家试炼？”</p>
+            <p>颜程小声低语道。</p>
+            <p>边上的吴竣优显然没注意听到颜程的话，也被周遭的环境给镇住了。</p>
+            <p>“走吧！”</p>
+            <p>颜程二人走进试炼厅，只需缴纳一笔费用，进入试炼场所，进行灵赋试炼。</p>
+            <p>只是…</p>
+            <p>“颜程同学，由于你出示圣北学院最高级别令，为此免除一切费用，还可通往最顶尖的试炼场进行试炼。”</p>
+            <p>试炼厅前台的小姐，双手交叠于腹前，朝颜程微微行礼，轻声恭贺道。</p>
+            <p>一旁的吴竣优得知这一切后，心里不禁泛起一丝异样的情绪。</p>
+            <p>“颜程，你藏得真够深的啊！没想到圣北学院最高级别令，你都拥有。”</p>
+            <p>吴竣优眼中流露出羡慕之色，望向一旁的颜程说道[cite: 4]。</p>
+            <p>“但话说回来，融能级在这个世界上是极为罕见，现在眼前就有一个，如果不好好重点培养，学院真就瞎了眼，对不起这融能级灵赋了。”</p>
+            <p>转念一想，吴竣优也是出于兄弟情谊替颜程着想。</p>
+            <p>随后，吴竣优踮起脚尖，拍了拍颜程的肩膀，开口说道。</p>
+            <p>“果然我兄弟有大能资质！”</p>
+            <p>颜程面露喜色地点了点头，听到兄弟这么一说，脑海中已经开始幻想自己已是世间最顶尖的灵魔师，心里顿时有点爽到。</p>
+            <p>“颜程同学！吴竣优同学！这是你们的试炼场门卡。”</p>
+            <p>前台小姐微微弯腰，将试炼场门卡递给他们二人。</p>
+            <p>“好的，谢谢你。”</p>
+            <p>颜程伸手从前台小姐掌心中接过，将试炼场门卡握在手中。</p>
+            <p>前台小姐嘴角微微上扬，露出一抹笑容。</p>
+            <p>“走，我们去试炼场。”</p>
+            <p>颜程望向一旁的吴竣优说道。</p>
+            <p>“走！”</p>
+            <p>吴竣优难掩脸上的兴奋，开口说道。</p>
+            <p>两人一高一矮，朝各自的试炼场走去。</p>
+            <p>“我到了。”</p>
+            <p>吴竣优率先抵达自己的试炼之门，于是乎马不停蹄地奔去，拿起握在手中试炼场门卡，进入到里面。</p>
+            <p>“这家伙，就这样走了？唉…”</p>
+            <p>颜程望向吴竣优的试炼之门，摇了摇头，继续前往寻找自己的试炼场。</p>
+            <p>不到半炷香后，颜程终是抵达自己的试炼之门，把手中的试炼场门卡，紧紧贴着试炼之门。</p>
+            <p>咔嚓！</p>
+            <p>随着试炼之门的启动，沉重的石门缓缓向两侧移动，发出一阵低沉的摩擦声。</p>
+            <p>颜程深吸一口气，缓步走进试炼场，望向周遭的环境，眼中闪过一抹惊艳之色：“这里的空间太夸张了吧！”</p>
+            <p>映入眼帘的是一座极为宽敞的试炼场地，其地面上还刻画着复杂的能量纹路，隐隐能察觉到淡淡的灵能气息。</p>
+            <p>四周的墙壁都是由特殊材料打造而成，顶部天花板还有几盏明亮的灯光，将这个空间照亮。</p>
+            <p>在他所站的位置，右侧一旁还有一座独立的操控台，操控远处一座试炼笼门，将之启动。</p>
+            <p>试炼场会根据灵魔师自身的修为，安排相对应的灵魔兽进入实战训练，不过，召唤灵魔兽需额外支付费用。</p>
+            <p>至于颜程，凭借圣北学院最高级别令，这些费用自然可以全部免除。</p>
+            <p>颜程站在试炼场中央，运转体内的劫焱，一颗尚未凝聚稳定的能量光球缓缓在手中浮现。</p>
+            <p>随后，他脸色微微一变，一时间无法压制这股磅礴的能量，几乎下意识地将其向远处释放出去。</p>
+            <p>轰！</p>
+            <p>能量光球骤然爆发，耀眼的光芒瞬间吞没前方区域，四周也被这突如其来的能量席卷，掀起阵阵气浪，地面也随之微微震动。</p>
+            <p>“我去！吓死我了！”</p>
+            <p>颜程望向眼前的场景，一时间愣住了。</p>
+            <p>他低头看向自己双手，心中不禁感到一阵庆幸。</p>
+            <p>若是继续将劫焱能量压缩进这个能量光球，后果恐怕不堪设想。</p>
+            <p>“看来我得一步一步来，还没完全掌控劫焱，就直接进入压缩状态，真是吃了熊心豹子胆啊！”</p>
+            <p>颜程这才发现，自己的控制能力有待进步，后续或许可以往这一方面衍生。</p>
+            <p>这件事情还得追溯到之前在电视上看到的一幕，有一位实力强大的灵魔师，他运转体内的焱焚，不断压缩这股能量，最终释放出的威能，远超同等级灵魔师。</p>
+            <p>因此，颜程打心底就幻想，如有一天他成功觉醒了灵赋，他势必要尝试一番。</p>
+            <p>现在，他就是尝试，试试就逝世，真就差一点啊，离逝世不远了。</p>
+            <p>接下来的时间，颜程便慢慢掌控，熟悉劫焱，早日可以成功施展这个强大无比的威能。</p>
+            <p>另一边的试炼厅，前台小姐被一声毫无征兆的警报声，打断了她的思绪。</p>
+            <p>“这是…颜程同学！”</p>
+            <p>前台小姐微微一怔，这次的警报多半是试炼场检测到异常能量波动，自动触发警报。</p>
+            <p>她立即传音给领导，便往颜程的方向赶过去。</p>
+            <p>正在开会的领导，也随之与在台前的洺院长禀报一声。</p>
+            <p>洺院长猛然站起，向试炼场方向，飞奔过去，身后还有一群导师紧随其后。</p>
+            <p>而颜程依旧继续训练着劫焱，不晓得外面所发生的一切。</p>
+            <p>下一刻，试炼之门突然打开，只见一名身穿黑色制服，裹着黑色丝袜的女子走了进来，胸前挂着一枚身份令牌，正是先前负责收取费用与登记的前台小姐。</p>
+            <p>“颜程同学发生什么事情了？”</p>
+            <p>前台小姐气喘吁吁，一手扶着试炼之门稍作喘息，目光急切地望向颜程，只为确保他的安危。</p>
+            <p>颜程手中的能量光球依旧不断扩张，注意力却被突然出现的前台小姐吸引，一时间忘了自己还在控制着这股能量。</p>
+            <p>还未等到颜程开口回应，片刻之后，颜程所待的试炼场，被一众强者所包围，这不是猎杀颜程，而是关心颜程之事，以免发生意外，其中也包括唐馨月导师。</p>
+            <p>“啊！？”</p>
+            <p>颜程被这突如其来的情况吓了一跳，紧接着手中的能量光球失去掌控，猛然朝下方下坠。</p>
+            <p>一旁的洺院长猛然睁大双眼，显然也没料到会发生这样的情况。</p>
+            <p>事发突然，洺院长微微撑开衣裳，缓缓抬起右手，眼见能量光球即将落在颜程脚下，一个小型黑洞骤然浮现，将能量光球瞬间吞噬，这才避免了爆炸的发生。</p>
+            <p>“颜程同学！怎么回事？”</p>
+            <p>颜程将事情的经过告诉了洺院长和在场的导师，还有门口处的前台小姐。</p>
+            <p>“就像刚才那种？”</p>
+            <p>洺院长低头看向刚才吞噬能量光球的位置，随后瞥视地远处区域，明显看得出先前有被炸的痕迹。</p>
+            <p>“嗯。”</p>
+            <p>颜程微微点头。</p>
+            <p>面对眼前这一众实力强大的灵魔师，颜程除了认识唐馨月导师以外，其他人都十分陌生。</p>
+            <p>说不紧张自然是假的，甚至连脚趾头都不自觉地蜷缩起来。</p>
+            <p>“原来如此。你现在的修为还不足以支撑这等能量，待你修为精进，到时你便可随意施展，眼前你只需要安稳发育，欠缺什么和学院说一声，学院必定会协助你。”</p>
+            <p>洺院长神情严肃，语气沉稳地说道。</p>
+            <p>颜程点了点头附和道：“嗯…好！”</p>
+            <p>一旁的唐馨月眼见没什么大碍，轻轻推了推眼镜，随后开口介绍起洺院长。</p>
+            <p>她看得出来，面对一众实力强大的灵魔师，一个才刚觉醒一天的颜程，心中难免会感到有些紧张。</p>
+            <p>“颜程，眼前与你对话的人，便是上次你觉醒的时候发生意外，一同帮助你的洺院长。”</p>
+            <p>唐馨月神情温和，语气轻柔地向颜程介绍道。</p>
+            <p>“啊？感谢洺院长的帮助，还有众导师的协助。”</p>
+            <p>颜程这才恍然大悟，连忙向洺院长和在场的导师致谢。</p>
+            <p>眼前之人有着一头花白短发，脸庞布满岁月留下的皱纹。</p>
+            <p>他拥有一双略显浑浊的眼眸，偶尔闪过锐利的精芒，令人不敢轻易直视。</p>
+            <p>身穿着一件略显陈旧的深蓝色长袍，但依稀能够从其衣袍上看得出，有着几道繁琐的法阵纹路刻在其中。</p>
+            <p>原本挺拔的身子如今略显佝偻，右手扶着拐杖，透露出几分岁月留下的沧桑。</p>
+            <p>众人纷纷点头，脸上流露出欣慰之色。</p>
+            <p>随后，院长一甩衣袖，转身朝门口离去。</p>
+            <p>其余的实力强大的灵魔师也相继离去，其中也包括唐馨月导师，毕竟此次出来是确保颜程的安危，既然没有大碍，便回会议室继续会议。</p>
+            <p>临走之前，唐馨月导师拍了拍颜程肩膀，低语道：“送你四个字，加紧修炼，一个月后有新生大比。”</p>
+            <p>“新生大比？”</p>
+            <p>颜程一脸茫然地目送着一众实力强大的灵魔师，回头也不忘感谢前台小姐的前来关心。</p>
+            <p>随后，前台小姐也相依离去，只剩颜程一人继续试炼。</p>
+        </div>
+    </main>
+
+    <div class="pagination">
+        <a href="chapter3.html">上一章</a>
+        <a href="index.html">目录</a>
+        <a href="#">下一章</a>
+    </div>
+
+    <script>
+        let currentFontSize = parseFloat(localStorage.getItem('novel_font_size')) || 18;
+        document.documentElement.style.setProperty('--font-size', currentFontSize + 'px');
+
+        let savedTheme = localStorage.getItem('novel_theme') || 'light';
+        document.body.setAttribute('data-theme', savedTheme);
+        updateThemeBtnText(savedTheme);
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const textElement = document.getElementById('novel-text');
+            if (textElement) {
+                const textLength = textElement.innerText.replace(/\s+/g, '').length;
+                localStorage.setItem('chapter4_word_count', textLength);
+            }
+        });
+
+        window.addEventListener('beforeunload', () => {
+            localStorage.setItem('fengmo_last_chapter', 'chapter4.html');
+            localStorage.setItem('fengmo_scroll_pos', window.scrollY);
+        });
+
+        function changeFontSize(step) {
+            currentFontSize += step * 2;
+            if (currentFontSize < 14) currentFontSize = 14; 
+            if (currentFontSize > 26) currentFontSize = 26; 
+            document.documentElement.style.setProperty('--font-size', currentFontSize + 'px');
+            localStorage.setItem('novel_font_size', currentFontSize);
+        }
+
+        function toggleTheme() {
+            const body = document.body;
+            let currentTheme = body.getAttribute('data-theme');
+            let newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('novel_theme', newTheme);
+            updateThemeBtnText(newTheme);
+        }
+
+        function updateThemeBtnText(theme) {
+            const btn = document.getElementById('theme-btn');
+            if (theme === 'dark') {
+                btn.textContent = '☀️ 白昼';
+            } else {
+                btn.textContent = '🌙 夜间';
+            }
+        }
+    </script>
+</body>
+</html>

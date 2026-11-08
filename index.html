@@ -181,44 +181,46 @@
                     <span id="c3-count" class="word-count"></span>
                 </a>
             </li>
+            <li>
+                <a href="chapter4.html">
+                    <span>第四章：试炼场</span>
+                    <span id="c4-count" class="word-count"></span>
+                </a>
+            </li>
         </ul>
     </main>
 
     <script>
-        // 初始化夜间模式
         let savedTheme = localStorage.getItem('novel_theme') || 'light';
         document.body.setAttribute('data-theme', savedTheme);
         updateThemeBtnText(savedTheme);
 
-        // 页面加载时读取各章字数与阅读进度
         window.addEventListener('DOMContentLoaded', () => {
             const c1Count = localStorage.getItem('chapter1_word_count');
-            if (c1Count) {
-                document.getElementById('c1-count').textContent = `约 ${c1Count} 字`;
-            }
+            if (c1Count) document.getElementById('c1-count').textContent = `约 ${c1Count} 字`;
 
             const c2Count = localStorage.getItem('chapter2_word_count');
-            if (c2Count) {
-                document.getElementById('c2-count').textContent = `约 ${c2Count} 字`;
-            }
+            if (c2Count) document.getElementById('c2-count').textContent = `约 ${c2Count} 字`;
 
             const c3Count = localStorage.getItem('chapter3_word_count');
-            if (c3Count) {
-                document.getElementById('c3-count').textContent = `约 ${c3Count} 字`;
-            }
+            if (c3Count) document.getElementById('c3-count').textContent = `约 ${c3Count} 字`;
 
-            // 检查历史阅读记录，显示继续阅读按钮
+            const c4Count = localStorage.getItem('chapter4_word_count');
+            if (c4Count) document.getElementById('c4-count').textContent = `约 ${c4Count} 字`;
+
             const lastChapter = localStorage.getItem('fengmo_last_chapter');
             const continueBtn = document.getElementById('continue-read-btn');
             if (lastChapter && continueBtn) {
                 continueBtn.href = lastChapter;
                 continueBtn.style.display = 'inline-block';
-                if (lastChapter === 'chapter1.html') {
-                    continueBtn.textContent = '📖 继续阅读：第一章';
-                } else if (lastChapter === 'chapter2.html') {
-                    continueBtn.textContent = '📖 继续阅读：第二章';
-                } else if (lastChapter === 'chapter3.html') {
-                    continueBtn.textContent = '📖 继续阅读：第三章';
+                const chapterNames = {
+                    'chapter1.html': '📖 继续阅读：第一章',
+                    'chapter2.html': '📖 继续阅读：第二章',
+                    'chapter3.html': '📖 继续阅读：第三章',
+                    'chapter4.html': '📖 继续阅读：第四章'
+                };
+                if (chapterNames[lastChapter]) {
+                    continueBtn.textContent = chapterNames[lastChapter];
                 }
             }
         });
